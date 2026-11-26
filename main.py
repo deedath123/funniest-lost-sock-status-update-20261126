@@ -14,6 +14,8 @@ ENTRY = (
 
 
 def main() -> None:
+    assert ENTRY, "entry must not be empty"
+    assert len(ENTRY) <= 120, "entry exceeds 120 characters"
     os.makedirs("/output", exist_ok=True)
     with open("/output/entry.txt", "w", encoding="utf-8") as f:
         f.write(ENTRY)
